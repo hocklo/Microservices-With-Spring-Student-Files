@@ -3,9 +3,14 @@
  */
 package com.springbootcourse.domain;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 
 /**
@@ -20,7 +25,9 @@ public class Team {
 	private String name;
 	private String location;
 	private String mascotte;
-	private Player[] players;
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="teamId")
+	private Set<Player> players;
 	
 	/**
 	 * @return the id
@@ -73,13 +80,13 @@ public class Team {
 	/**
 	 * @return the players
 	 */
-	public Player[] getPlayers() {
+	public Set<Player> getPlayers() {
 		return players;
 	}
 	/**
 	 * @param players the players to set
 	 */
-	public void setPlayers(Player[] players) {
+	public void setPlayers(Set<Player> players) {
 		this.players = players;
 	}
 	
