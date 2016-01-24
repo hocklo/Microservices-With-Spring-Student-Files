@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+
 /**
  * @author hocklo
  *
@@ -19,6 +20,7 @@ public class Team {
 	private String name;
 	private String location;
 	private String mascotte;
+	private Player[] players;
 	
 	/**
 	 * @return the id
@@ -67,6 +69,18 @@ public class Team {
 	 */
 	public void setMascotte(String mascotte) {
 		this.mascotte = mascotte;
+	}
+	/**
+	 * @return the players
+	 */
+	public Player[] getPlayers() {
+		return players;
+	}
+	/**
+	 * @param players the players to set
+	 */
+	public void setPlayers(Player[] players) {
+		this.players = players;
 	}
 	
 	

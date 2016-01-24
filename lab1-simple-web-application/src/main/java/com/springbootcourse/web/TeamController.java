@@ -20,12 +20,12 @@ public class TeamController {
 	@Autowired
 	private TeamRepository teamRepository;
 	
-	@RequestMapping("/teams")
+	@RequestMapping("/part2/teams")
 	public Iterable<Team> getTeams(){
 		return teamRepository.findAll();
 	}
 	
-	@RequestMapping("/teams/{id}")
+	@RequestMapping("/part3/teams/{id}")
 	public Team getTeam(@PathVariable("id") Long id) {
 		return teamRepository.findOne(id);
 	}
