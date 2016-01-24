@@ -1,13 +1,20 @@
 /**
  * 
  */
-package domain;
+package com.springbootcourse.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * @author hocklo
  *
  */
+@Entity
 public class Team {
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String name;
 	private String location;
